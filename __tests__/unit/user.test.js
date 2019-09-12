@@ -1,14 +1,14 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcryptjs");
 
 const { User } = require('../../src/app/models');
-const  truncate  = require('../utils/truncate');
+const truncate  = require('../utils/truncate');
 
 describe('User', () =>{
   beforeEach(async () => {
-    await truncate()
+    await truncate();
   })
 
-   it('shold encrypt user password', async() =>{
+   it('should encrypt user password', async() =>{
      const user = await User.create({
         name: 'Marilaine', 
         email: 'maary.santos1@gmail.com', 
@@ -20,6 +20,8 @@ describe('User', () =>{
         expect(compareHash).toBe(true);
 
 
-    })
+    });
 
-})
+    
+
+});
